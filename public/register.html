@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Ký - Cyber Chat Project</title>
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <form class="auth-container" id="login-form">
+        <h2>Đăng Ký</h2>
+        <div class="form-group">
+          <label for="username"> Họ và tên </label>
+          <input type="text" id="username" name="username" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber"> Số điện thoại </label>
+          <input type="number" id="phonNumber" name="phoneNumber" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email"> Email </label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="passWord"> Mật khẩu </label>
+          <input type="password" id="passWord" name="passWord" required />
+          <span class="toggle-password" id="togglePassWord">Hiện</span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassWord"> Xác nhận </label>
+          <input
+            type="password"
+            id="confirmPassWord"
+            name="confirmPassWord"
+            required
+          />
+          <span class="toggle-password" id="toggleConfirmPassWord">Hiện</span>
+        </div>
+
+        <button type="submit">Đăng Ký</button>
+      </form>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const passInput = document.getElementById("passWord");
+        const toggleBtn = document.getElementById("togglePassWord");
+
+        if (passInput && toggleBtn) {
+          toggleBtn.addEventListener("click", () => {
+            const type =
+              passInput.getAttribute("type") === "password"
+                ? "text"
+                : "password";
+            passInput.setAttribute("type", type);
+
+            toggleBtn.textContent = type === "password" ? "Hiện" : "Ẩn";
+          });
+        }
+
+        const confirmInput = document.getElementById("confirmPassWord");
+        const toggleConfirmBtn = document.getElementById(
+          "toggleConfirmPassWord"
+        );
+
+        if (confirmInput && toggleConfirmBtn) {
+          toggleConfirmBtn.addEventListener("click", () => {
+            const type =
+              confirmInput.getAttribute("type") === "password"
+                ? "text"
+                : "password";
+            confirmInput.setAttribute("type", type);
+
+            toggleConfirmBtn.textContent = type === "password" ? "Hiện" : "Ẩn";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
