@@ -1,0 +1,41 @@
+/* Reset CSS cơ bản */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #36393f; /* Màu nền tối giống Discord */
+  color: #ffffff;
+  height: 100vh; /* Cao 100% màn hình */
+  overflow: hidden; /* Ẩn thanh cuộn của cả trang */
+}
+
+/* Sử dụng CSS Grid để tạo bố cục 4 cột
+*/
+.app-layout {
+  display: grid;
+  height: 100vh; /* Cao 100% màn hình */
+
+  /* Định nghĩa kích thước của 4 cột:
+       Cột 1: 72px (cố định)
+       Cột 2: 240px (cố định)
+       Cột 3: 1fr (Tự động co giãn chiếm hết phần còn lại)
+       Cột 4: 240px (cố định)
+    */
+  grid-template-columns: 72px 240px 1fr 240px;
+}
+
+/* Chỉ thêm màu nền để dễ phân biệt 4 cột */
+.column-1-nav {
+  background-color: #202225;
+}
+
+.column-2-sidebar {
+  background-color: #2f3136;
+}
+
+.column-3-main {
+  background-color: #36393f;
+}
+
+.column-4-members {
+  background-color: #2f3136;
+}
